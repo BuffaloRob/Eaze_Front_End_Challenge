@@ -6,7 +6,7 @@
 
 Using the Github API and your framework of choice, display a list of your public Github repos. Include the description, and sort them by number of watchers, most popular first.
 
-## Folder Structure
+### Folder Structure
 
 We've included all of the boilerplate to get started with this project using React. Feel free to use this structure if you'd like. If you'd prefer to use something other than React or you'd prefer a different project structure, go ahead and make any changes you'd like.
 
@@ -43,11 +43,11 @@ They will not be included in the production build so you can use them for things
 >
 >You may encounter an issue where changing a file inside `src` doesn’t trigger a recompilation. Most likely this happens because the path in your filesystem differs in its casing from the path you imported. For example, if a file is called `App.js` but you are importing `app.js`, the watcher might not recognize changes to it. We are [considering](https://github.com/facebookincubator/create-react-app/issues/240) enforcing some checks to prevent this. If this doesn’t help, check out the page on [troubleshooting watching](https://webpack.github.io/docs/troubleshooting.html#watching).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+#### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -55,7 +55,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm run build`
+#### `npm run build`
 
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -63,7 +63,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-### `npm run eject`
+#### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -73,9 +73,9 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## How To...
+### How To...
 
-### Install a Dependency
+#### Install a Dependency
 
 The project includes React and ReactDOM as dependencies. It also includes a set of scripts used by Create React App as a development dependency. You may install other dependencies (for example, React Router) with `npm`:
 
@@ -83,14 +83,14 @@ The project includes React and ReactDOM as dependencies. It also includes a set 
 npm install --save <library-name>
 ```
 
-### Import a Component
+#### Import a Component
 
 This project setup supports ES6 modules thanks to Babel.  
 While you can still use `require()` and `module.exports`, we encourage you to use [`import` and `export`](http://exploringjs.com/es6/ch_modules.html) instead.
 
 For example:
 
-### `Button.js`
+#### `Button.js`
 
 ```js
 import React, { Component } from 'react';
@@ -104,7 +104,7 @@ class Button extends Component {
 export default Button; // Don’t forget to use export default!
 ```
 
-### `DangerButton.js`
+#### `DangerButton.js`
 
 ```js
 import React, { Component } from 'react';
@@ -131,11 +131,11 @@ Learn more about ES6 modules:
 * [Exploring ES6: Modules](http://exploringjs.com/es6/ch_modules.html)
 * [Understanding ES6: Modules](https://leanpub.com/understandinges6/read#leanpub-auto-encapsulating-code-with-modules)
 
-### Add a Stylesheet
+#### Add a Stylesheet
 
 This project setup uses [Webpack](https://webpack.github.io/) for handling all assets. Webpack offers a custom way of “extending” the concept of `import` beyond JavaScript. To express that a JavaScript file depends on a CSS file, you need to **import the CSS from the JavaScript file**:
 
-#### `Button.css`
+##### `Button.css`
 
 ```css
 .Button {
@@ -143,7 +143,7 @@ This project setup uses [Webpack](https://webpack.github.io/) for handling all a
 }
 ```
 
-#### `Button.js`
+##### `Button.js`
 
 ```js
 import React, { Component } from 'react';
@@ -163,7 +163,7 @@ In development, expressing dependencies this way allows your styles to be reload
 
 If you are concerned about using Webpack-specific semantics, you can put all your CSS right into `src/index.css`. It would still be imported from `src/index.js`, but you could always remove that import if you later migrate to a different build tool.
 
-### Post-Process CSS
+#### Post-Process CSS
 
 This project setup minifies your CSS and adds vendor prefixes to it automatically through [Autoprefixer](https://github.com/postcss/autoprefixer) so you don’t need to worry about it.
 
@@ -196,7 +196,7 @@ becomes this:
 
 There is currently no support for preprocessors such as Less, or for sharing variables across CSS files.
 
-### Add Images and Fonts
+#### Add Images and Fonts
 
 With Webpack, using static assets like images and fonts works similarly to CSS.
 
@@ -232,9 +232,9 @@ Please be advised that this is also a custom feature of Webpack.
 
 **It is not required for React** but many people enjoy it (and React Native uses a similar mechanism for images). However it may not be portable to some other environments, such as Node.js and Browserify. If you prefer to reference static assets in a more traditional way outside the module system, please let us know [in this issue](https://github.com/facebookincubator/create-react-app/issues/28), and we will consider support for this.
 
-### Deploy
+#### Deploy
 
-#### GitHub Pages
+##### GitHub Pages
 
 >Note: this feature is available with `react-scripts@0.2.0` and higher.
 
@@ -266,6 +266,6 @@ Note that GitHub Pages doesn't support routers that use the HTML5 `pushState` hi
 * You could switch from using HTML5 history API to routing with hashes. If you use React Router, you can switch to `hashHistory` for this effect, but the URL will be longer and more verbose (for example, `http://user.github.io/todomvc/#/todos/42?_k=yknaj`). [Read more](https://github.com/reactjs/react-router/blob/master/docs/guides/Histories.md#histories) about different history implementations in React Router.
 * Alternatively, you can use a trick to teach GitHub Pages to handle 404 by redirecting to your `index.html` page with a special redirect parameter. You would need to add a `404.html` file with the redirection code to the `build` folder before deploying your project, and you’ll need to add code handling the redirect parameter to `index.html`. You can find a detailed explanation of this technique [in this guide](https://github.com/rafrex/spa-github-pages).
 
-## Testing
+### Testing
 
 Use whatever testing library you prefer. The tests should be run using `npm test`.
