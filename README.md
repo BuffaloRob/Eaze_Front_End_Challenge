@@ -4,7 +4,8 @@
 
 ## Project
 
-Using the Github API and your framework of choice, display a list of your public Github repos. Include the description, and sort them by number of watchers, most popular first.
+1. Using the Github API and your framework of choice, display a list of your public Github repos. Include the description, and sort them by number of watchers, most popular first.
+2. Add one or two extra features that reflect your interest. Here are just some ideas but feel free to be creative: let the visitor change the username of the listed repos, polish the UI/UX of the page, add some tests, let the user sort repos by name/followers/etc. 
 
 ### Folder Structure
 
