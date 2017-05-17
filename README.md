@@ -1,6 +1,6 @@
 # Eaze Front End Homework
 
-> Our Front End code challenge for engineering applicants
+Our Front End code challenge for engineering applicants
 
 ## Project
 
