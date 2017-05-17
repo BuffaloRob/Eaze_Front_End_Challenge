@@ -28,12 +28,18 @@ Add some unit tests.
 We've included all of the boilerplate to get started with this project using [create-react-app](https://github.com/facebookincubator/create-react-app), feel free to use this structure if you'd like. If you'd prefer to use something other than React or you'd prefer a different project structure, go ahead and make any changes you'd like.
 
 ### Evaluation
+
 The app should run on any computer by running `npm install` and `npm start`.
 We’ll evaluate the exercise by looking at the end result and the code.
- asd
+
 ### Coding at Eaze
+
 At [Eaze](https://www.eaze.com) we strive for writing simple, maintainable and clean code. 
+
 We prefer simplicity and over complexity.
+
 We comment our code and commit often.
+
 We love our users and we really care about providing a good user experience and pleasant UI.
+
 We encourage out of the box thinking and we love to be impressed!
