@@ -1,6 +1,6 @@
 # Eaze Front End Homework
 
-Front End coding challenge
+Front End coding challenge.
 
 ## Project
 
