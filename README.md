@@ -36,7 +36,7 @@ We’ll evaluate the exercise by looking at the end result and the code.
 
 At [Eaze](https://www.eaze.com) we strive for writing simple, maintainable and clean code. 
 
-We prefer simplicity and over complexity.
+We prefer simplicity over complexity.
 
 We comment our code and commit often.
 
