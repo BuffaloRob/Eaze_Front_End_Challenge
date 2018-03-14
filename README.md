@@ -32,6 +32,10 @@ We've included all of the boilerplate to get started with this project using [cr
 The app should run on any computer by running `npm install` and `npm start`.
 We’ll evaluate the exercise by looking at the end result and the code.
 
+### Notes
+
+Please, don't open a PR against this repo. Just follow the direction from the rectuiter on how to submit the exercise.
+
 ### Coding at Eaze
 
 At [Eaze](https://www.eaze.com) we strive for writing simple, maintainable and clean code. 
