@@ -4,7 +4,7 @@ Front End coding challenge.
 
 ## Project
 
-We would like you to build a web app that displays the trending GIFs on [Giphy](https://giphy.com/). 
+We would like you to build a web app that displays the trending GIFs on [Giphy](https://giphy.com/).
 Users visiting the website should be able to search for GIFs and see a list of results. The user should be able to expand a GIF and see its details (username, rating, anything you think could be relevant).
 
 Users should have a good user experience on desktop, tablet and mobile devices.
@@ -34,11 +34,11 @@ We’ll evaluate the exercise by looking at the end result and the code.
 
 ### Notes
 
-Please, don't open a PR against this repo. Just follow the direction from the rectuiter on how to submit the exercise.
+Please, don't open a PR against this repo. Just follow the direction from the recruiter on how to submit the exercise.
 
 ### Coding at Eaze
 
-At [Eaze](https://www.eaze.com) we strive for writing simple, maintainable and clean code. 
+At [Eaze](https://www.eaze.com) we strive for writing simple, maintainable and clean code.
 
 We prefer simplicity over complexity.
 
