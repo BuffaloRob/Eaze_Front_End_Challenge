@@ -14,9 +14,18 @@ class Giphy extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount(string) {
     const YOUR_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
-    fetch("http://api.giphy.com/v1/gifs/trending?api_key=" + YOUR_API_KEY)
+    let GIPHY_API = 'http://api.giphy.com/v1/gifs/';
+
+    if (string) { 
+      GIPHY_API += 'search/?q=' + string + '&api_key=' + YOUR_API_KEY;
+    } else { 
+      GIPHY_API += 'trending?api_key=' + YOUR_API_KEY;
+    }
+
+    console.log(GIPHY_API);
+    fetch(GIPHY_API)
       .then(res => res.json())
       .then(
         (result) => {
@@ -50,12 +59,23 @@ class Giphy extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
+
+      this.state.items.map((e) => {
+        if (e.user !== undefined) {
+          console.log(e.user);
+        }
+      })
       return (
         <ul>
           {
             this.state.items.map((e, i) => {
-              return (
-                <Listing key={i} value={e.images.downsized_medium.url} />
+                let username = ""
+                if (e.user !== undefined)
+                    username = e.user.username
+                else
+                    username = "No username"
+                return (
+                <Listing key={i} image={e.images.downsized_medium.url} username={username} />
               );
             })
           }
@@ -68,14 +88,40 @@ class Giphy extends Component {
 
 function Listing(props) {
     return (
-      <li><img src={props.value} /></li>    
+      <li>
+        <img src={props.image} />
+        <h1>{props.username}</h1>
+      </li>    
     )
 }
 
-class SearchBar extends Component {
+class Form extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        value: ''
+    };
+  } 
+
+  handleChange = (e) => {
+    this.setState({
+      value: e.target.value
+    })
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    console.log(this.state.value); 
+  }
+
   render() {
     return (
-      <input type="text" placeholder="Search Trending Gifs..."/>
+      <div className="SearchBar">
+        <form onSubmit={e => this.onSubmit(e)}>
+          <input type="text" placeholder="Search Trending Gifs..." value={this.state.value} onChange={e => this.handleChange(e)}/>
+          <button>Search</button>
+        </form>
+      </div>
     );
   }
 }
@@ -85,7 +131,7 @@ class Main extends Component {
     return (
       <div className="container">
         <div className="search_bar">
-          <SearchBar />
+          <Form />
         </div>
         <div className="gify_container">
           <Giphy />
