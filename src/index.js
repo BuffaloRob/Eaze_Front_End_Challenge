@@ -15,7 +15,7 @@ class Giphy extends Component {
   }
 
   componentDidMount(string) {
-    const YOUR_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
+    const YOUR_API_KEY = 'i3mwyIid3cRgqhwO9FPwC83IccBImA1P';
     let GIPHY_API = 'http://api.giphy.com/v1/gifs/';
 
     if (string) { 
@@ -43,13 +43,6 @@ class Giphy extends Component {
       )
   }
  
-  createListing(items) {
-    return items.map((e, i) => {
-      return (
-        <Listing key={i} value={e.images.downsized_medium.url} />
-      )
-    })
-  }
  
   render() {
     const { error, isLoaded, items } = this.state;
@@ -66,21 +59,22 @@ class Giphy extends Component {
         }
       })
       return (
-        <ul>
-          {
-            this.state.items.map((e, i) => {
-                let username = ""
-                if (e.user !== undefined)
-                    username = e.user.username
-                else
-                    username = "No username"
-                return (
-                <Listing key={i} image={e.images.downsized_medium.url} username={username} />
-              );
-            })
-          }
-          //{this.createListing(this.state.items)}
-        </ul>
+        <div className="giphy-list">
+          <ul>
+            {
+              this.state.items.map((e, i) => {
+                  let username = ""
+                  if (e.user !== undefined)
+                      username = e.user.username
+                  else
+                      username = "No username"
+                  return (
+                  <Listing key={i} image={e.images.downsized_medium.url} username={username} />
+                );
+              })
+            }
+          </ul>
+        </div>
       );
     }
   }
@@ -95,7 +89,7 @@ function Listing(props) {
     )
 }
 
-class Form extends Component {
+class Input extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -116,24 +110,29 @@ class Form extends Component {
 
   render() {
     return (
-      <div className="SearchBar">
-        <form onSubmit={e => this.onSubmit(e)}>
-          <input type="text" placeholder="Search Trending Gifs..." value={this.state.value} onChange={e => this.handleChange(e)}/>
-          <button>Search</button>
-        </form>
+      <div className="main-header">
+        <h1>Search for Giphys!</h1>
+        <div className="searchbar">
+          <form onSubmit={e => this.onSubmit(e)}>
+            <input className="searchbar-input" type="text" value={this.state.value} onChange={e => this.handleChange(e)}/>
+            <i className="fa fa-search searchbar-icon" aria-hidden="true"></i>
+            <i className="fa fa-times searchbar-cross" aria-hidden="true"></i>
+          </form>
+        </div>
       </div>
     );
   }
 }
 
+
 class Main extends Component {
   render() {
     return (
       <div className="container">
-        <div className="search_bar">
-          <Form />
+        <div class="row">
+          <Input />
         </div>
-        <div className="gify_container">
+        <div class="row">
           <Giphy />
         </div>
       </div>
