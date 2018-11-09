@@ -3,6 +3,8 @@
   text-align:center;
 }
 
+/* ============ Search Bar =========== */
+
 .searchbar {
   height: 20vh;
   display: flex;
@@ -33,7 +35,31 @@
   cursor: pointer;
 }
 
+
+/* ============ Giphy Listings =========== */
+
 .giphy-list ul {
   text-align:center;
   list-style-type: none;
+}
+
+.giphy-list ul * {
+  margin: 20px 0;
+}
+
+.user-description {
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.user-avatar:hover {
+  cursor: pointer;
 }

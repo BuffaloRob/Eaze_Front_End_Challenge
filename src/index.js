@@ -1,4 +1,4 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -43,7 +43,6 @@ class Giphy extends Component {
       )
   }
  
- 
   render() {
     const { error, isLoaded, items } = this.state;
 
@@ -63,13 +62,11 @@ class Giphy extends Component {
           <ul>
             {
               this.state.items.map((e, i) => {
-                  let username = ""
-                  if (e.user !== undefined)
-                      username = e.user.username
-                  else
-                      username = "No username"
+                  const unknown_url = "https://3znvnpy5ek52a26m01me9p1t-wpengine.netdna-ssl.com/wp-content/uploads/2017/07/noimage_person.png";
+                  let username = (e.user !== undefined) ? e.user.username : "No username";
+                  let avatar_url = (e.user !== undefined) ? e.user.avatar_url : unknown_url;
                   return (
-                  <Listing key={i} image={e.images.downsized_medium.url} username={username} />
+                  <Listing key={e.id} id={e.id} image={e.images.downsized_medium.url} username={username} avatar_url={avatar_url} />
                 );
               })
             }
@@ -82,9 +79,12 @@ class Giphy extends Component {
 
 function Listing(props) {
     return (
-      <li>
+      <li className={props.id}>
         <img src={props.image} />
-        <h1>{props.username}</h1>
+        <div className="user-description">
+          <img className="user-avatar" src={props.avatar_url} />
+          <h1 className="username">{props.username}</h1>
+        </div>
       </li>    
     )
 }
@@ -123,7 +123,6 @@ class Input extends Component {
     );
   }
 }
-
 
 class Main extends Component {
   render() {
